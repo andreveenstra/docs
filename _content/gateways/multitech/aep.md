@@ -102,32 +102,26 @@ Disconnect the temporary network cable and connect the Conduit to the target net
 
 ## TTN Configuration {#ttn-configuration-aep}
 
-Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit.
+Once the Conduit has finished restarting and is connected to the target network, connect a computer to the same network and login to the Conduit by entering its IP in a browser.
 
 > If you have not configured your Conduit with a static IP, you will have to [find out which IP the DHCP assigned to it](http://apple.stackexchange.com/questions/19783/how-do-i-know-the-ip-addresses-of-other-computers-in-my-network).
 
-* For Windows use a terminal program like Putty to connect to `admin@<IP>`:
+Click the LoRaWAN tab on the left.
 
-  ![PuTTY Configuration](putty-aep.png)
+In the **Mode** dropdown, choose Packet Forwarder.
 
-  You will get a security alert concerning the host key. Accept the new key with **Yes**.
+In the **Channel Plan** dropdown, choose the channel plan for your area. This must match the channel plan you configure in the Console.
 
-  ![PuTTY Security Alert](putty-warning.png)
+![LoRa Settings](lora-settings-1.png)
 
-* For Linux/OSX open terminal and connect via `ssh admin@<IP>`.
+For the **Server Address**, you will need to add the [address of the router region](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html#router-addresses) - for example, for the EU region, it will be `router.eu.thethings.network`.
 
-Download the [installer](https://github.com/kersing/multitech-installer/raw/master/installer.sh) by entering the next command:
+Unless you’re running the network yourself on specific ports, the **upstream** and **downstream ports** will be 1700 and 1700.
 
-```bash
-wget https://github.com/kersing/multitech-installer/raw/master/installer.sh --no-check-certificate
-```
+![LoRa Settings](lora-settings-2.png)
 
-![wget](wget.png)
+After you have entered all of the configuration settings, press **Submit** at the bottom.
 
-Now run the installer and provide the prompted information. (Answer **Yes** to the first question, since we've already set up the conduit network etc in the previous steps.
+Press the **Save and Apply** button in the left hand menu to apply the settings.
 
-```bash
-sh installer.sh
-```
-
-![installer](installer-aep.png)
+![Save and Apply](save-and-apply.png)
